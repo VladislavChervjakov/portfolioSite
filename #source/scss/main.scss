@@ -1,0 +1,945 @@
+@import 'nullstyle';
+@import 'config';
+// grid
+$container-width: 90%;
+@media(max-width: $container-width){
+    .container{
+        max-width: 970px;
+    }
+}
+@media(max-width: 992px){
+    .container{
+        max-width: 750px;
+    }
+}
+@media(max-width: 767px){
+    .container{
+        max-width: none;
+    }
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: #0c0c0c;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+a{
+	cursor: pointer;
+}
+
+.container{
+    position: relative;
+    max-width: $container-width;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.header{
+    &__body{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 27px;
+    }
+    &__logo{
+        margin-left: 12px;
+    }
+    &__menu{
+        @include transition(.5s);
+        margin-right: 12px;
+        margin-top: -2400px;
+    }
+    &__menu-active{
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .menu__list{
+            display: block;
+            color: #fff;
+            font-size: 66px;
+            font-weight: 800;
+            li{
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+.burger{
+    cursor: pointer;
+    @include burger;
+    position: absolute;
+    right: 0;
+    .short{
+        width: 15px;
+        margin: 0 auto 2px auto;
+    }
+}
+.burger-close{
+    @include burgerClose;
+}
+.menu{
+   width: 100%;
+   height: 100vh;
+   &__item{
+       cursor: pointer;
+   }
+    background-color: #0c0c0c;
+    z-index: 1;
+    &__list{
+        display: none;
+    }
+}
+
+.content-slider{
+    z-index: 0;
+    height: 100%;
+    &__body{
+        margin-top: 73px;
+        position: relative;
+        @include laptop{
+            margin-top: 15px;
+        }
+    }
+    &__slide{
+        @include transition(1.5s);
+        position: absolute;
+        left: 20px;
+        top: -2400px;
+        @include laptop{
+            top: -2400px;
+            left: 40px;
+        }
+        @include largeLaptop{
+            top: 0;
+            top: -2400px;
+        }
+        @include tablets{
+            left: 0;
+            padding-top: 29%;
+        }
+        @include phones{
+            padding-top: 0;
+        }
+    }
+    &__slide-active{
+        top: 50px;
+        @include laptop{
+            top: 0;
+        }
+        @include largeLaptop{
+            top: 0;
+        }
+    }
+    &__navigation{
+        max-width: 80px;
+        height: 868px;
+        position: relative;
+        @include largeLaptop{
+            height: 686px;   
+        }
+        @include laptop{
+            top: 50px;
+            height: 468px;
+        }
+        @include tablets{
+            display: none;
+        }
+    }
+    &__line{
+        width: 1px;
+        background-color: #fff;
+        height: 100%;
+    }
+    &__navigation-page{
+        position: absolute;
+        top: 25px;
+        left: -2.5px;
+        color: #fff;
+        background: #fff;
+        font-size: 16px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        margin-bottom: 114px;
+        cursor: pointer;
+        z-index: 1;
+    }
+    &__navigation-page-active{
+        background-color: #112fd8;
+    }
+    &__navigation-page-name{
+        display: none;
+        position: absolute;
+        top: -5px;
+        right: 15px;
+
+    }
+    &__navigation-page-number{
+        position: absolute;
+        top: -5px;
+        left: 15px;
+    }
+    &__navigation-page-number-active{
+        right: 15px;
+        left: -27px;
+    }
+    &__navigation-page-name-active{
+        display: block;
+        left: 15px;
+        right: 0;
+    }
+}
+
+.home{
+   &__header{
+       display: flex;
+       justify-content: space-between;
+       margin: 0 auto;
+       padding: 70px 170px 0px 170px;
+       @include laptop{
+           padding: 0 100px 0 100px;
+       }
+       @include tablets{
+           padding: 0;
+       }
+   }
+   &__row{
+        display: flex;
+        justify-content: space-between;
+        padding: 25px 0 70px 0;
+        border-top: 1px solid #252525;
+        width: 82%;
+        margin: 0 auto;
+        @include tablets{
+            width: 100%;
+        }
+        @include smallPhones{
+            display: none;
+        }
+        @include phones{
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 65px;
+        }
+   }
+   &__btn{
+       font-size: 14px;
+       display: inline-block;
+       text-transform: uppercase;
+       line-height: normal;
+       position: relative;
+       padding: 5px 17px 5px 12px;
+       background-color: transparent;
+       font-weight: 700;
+       border-radius: 5px;
+       .background{
+           position: absolute;
+           z-index: -1;
+           background-color: #0f33ff;
+           height: 100%;
+           top: 0;
+           right: 0;
+           left: 23px;
+           transition: left .2s ease-in-out;
+       }
+       &:hover{
+          .background{
+              left: 0;
+             
+          }
+       }
+   }
+   &__image{
+       @include laptop{
+            margin-top: -50px;
+       }
+       @include tablets{
+           margin-top: 0;
+           margin-left: -130px;
+       }
+       @include phones{
+           display: none;
+       }
+   }
+   &__title{
+       color: #fff;
+       font-size: 110px;
+       min-width: 480px;
+       height: 213px;
+       letter-spacing: 2px;
+       line-height: 90px;
+       font-weight: bold;
+       @include laptop{
+           font-size: 70px;
+           line-height: 60px;
+           min-width: 400px;
+           margin-top: 34px;
+       }
+       @include tablets{
+           min-width: 300px;
+           font-size: 65px;
+       }
+       @include smallPhones{
+        margin-left: 5px;
+        margin-top: 39%;
+    
+    }
+   }
+}
+
+.tabs{
+    &__item{
+        color: #252525;
+        font-size: 26px;
+        cursor: pointer;
+        @include laptop{
+            font-size: 20px;
+        }
+        @include tablets{
+            font-size: 16px;
+        }
+        @include phones{
+            font-size: 25px;
+            margin-bottom: 35px;
+        }
+    
+        &:hover{
+            color: #fff;
+        }
+    }
+    &__header{
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+    &__text{
+        line-height: 24px;
+    }
+
+}
+.head-button{
+    padding: 9px 14px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 14px;
+    background-color: #0f33ff;
+}
+.works{
+    @include headButtonStyles;
+    width: 100%;
+    &__slider{
+        margin-top: 120px;
+        @include laptop{
+            margin-top: 70px;
+        }
+        @include phones{
+            margin-top: 35px;
+        }
+    }
+    &__slide{
+        position: relative;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+    &__slide-item{
+        position: absolute;
+        top: 130px;
+        @include laptop{
+            top: 60px;
+        }
+      
+    }
+    &__slide-item-left{
+        left: 5%;
+        p{
+            display: none;
+        }
+        @include phones{
+            display: none;
+        }
+        @include tablets{
+            left: -20px;
+        }
+    }
+    &__slide-item-right{
+        right: 5%;
+        p{
+            display: none;
+        }
+        @include phones{
+            display: none;
+        }
+        @include tablets{
+            right: -20px;
+        }
+    }
+    &__slide-item-center{
+        left: 34.5%;
+        @include largeLaptop{
+            left: 35%;
+        }
+        @include laptop{
+            left: 38%;
+        }
+    
+        @media (width: 414px){
+            left: 15%;
+        }
+        @include tablets{
+            left: 27%;
+        }
+        @include largeTablet{
+            left: 34%;
+        }
+        @include phones{
+            left: 11%;
+        }
+        p{
+            display: block;
+        }
+        top: 0;
+        img{
+            width: 450px;
+            height: 450px;
+            @include largeLaptop{
+                width: 350px;
+                height: 350px;  
+            }
+            @include laptop{
+                width: 250px;
+                height: 250px;
+            }
+            @include phones{
+                width: 200px;
+                height: 200px;
+            }
+            border-radius: 50%;
+        }
+    }
+    &__image{
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        @include largeLaptop{
+            width: 150px;
+            height: 150px;
+        }
+    }
+    &__slider-header{
+        text-align: center;
+        color: #fff;
+        font-weight: 800;
+        font-size: 30px;
+        @include phones{
+            margin-top: 130px;
+        }
+    }
+    &__title{
+        color: #fff;
+        line-height: 72px;
+        font-size: 18px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+    &__description{
+        line-height: 24px;
+        font-size: 16px;
+        color: #fff;
+    }
+    &__slider-left{
+        left: 80px;
+        top: 410px;
+        @include largeLaptop{
+            top: 370px;
+        }
+        @include laptop{
+            top: 240px;
+            left: 60px;
+        }
+       
+        @include tablets{
+            top: 400px;
+            left: -20px;
+        }
+        @include largeTablet{
+            top: 470px;
+        }
+        @include phones{
+            top: 279px;
+            left: 0px;
+        }
+    }
+    &__slider-right{
+        right: 80px;
+        top: 410px;
+        @include largeLaptop{
+            top: 370px;
+        }
+        @include laptop{
+            top: 240px;
+            right: 60px;
+        }
+       
+        @include tablets{
+            top: 400px;
+            right: -20px;
+        }
+        @include largeTablet{
+            top: 470px;
+        }
+        @include phones{
+            top: 279px;
+            right: 0px;
+        }
+    }
+    .arrows{
+        cursor: pointer;
+        position: absolute;
+        color: #fff;
+        font-weight: 800;
+        font-size: 34px;
+        padding: 18px;
+        border-radius: 50%;
+        background-color: #282828;
+        display: inline-block;
+        vertical-align: middle;
+        span{
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        @include laptop{
+            padding: 10px;
+        }
+    }
+}
+.sub-image{
+    position: absolute;
+}
+.about{
+    width: 100%;
+    @include headButtonStyles;
+    &__content{
+        padding: 90px 0;
+        width: 60%;
+     
+        @include laptop{
+            padding: 0;
+            width: 75%;
+        }
+        @include largeTablet{
+            padding-top: 50px;
+            width: 100%;
+        }
+        @include tablets{
+            width: 100%;
+        }
+        @include phones{
+            padding: 135px 0;
+        }
+        margin: 0 auto;
+    }
+    &__header{
+        position: relative;
+        &::after{
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #0f33ff;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 60px;
+            left: 520px;
+            @include tablets{
+                top: 24px;
+                left: 270px;
+            }
+        }
+        &::before{
+            content: "";
+            transform: rotate(-25deg);
+            border: 5px solid #0f33ff;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            position: absolute;
+            left: 225px;
+            top: -20px;
+        }
+    }
+    &__head-text{
+        max-width: 464px;
+        width: 100%;
+        color: #fff;
+        line-height: 78px;
+        font-weight: 900;
+        font-size: 70px;
+        @include phones{
+            font-size: 50px;
+        }
+        letter-spacing: 2px;
+        height: 295px;
+        font-family: 'Montserrat', sans-serif;
+        &::after{
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #0f33ff;
+            position: absolute;
+            left: 280px;
+            bottom: 126px;
+            @include laptop{
+                bottom: 89px;
+            }
+            @include tablets{
+                bottom: 125px;
+                left: 200px;
+            }
+        }
+        &::before{
+            content: '';
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #0f33ff;
+            position: absolute;
+            top: 71px;
+            left: 300px;
+            @include phones{
+                top: 85px;
+                left: 219px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    &__main-img{
+        right: 140px;
+        top: -100px;
+        @include laptop{
+            right: 20px;
+            top: -119px;
+        }
+        @include laptop{
+            right: -37px;
+        }
+        @include phones{
+            display: none;
+        }
+    }
+    &__link-career{
+        display: inline-block;
+        color: #fff;
+        font-size: 18px;
+        letter-spacing: 1px;
+        font-weight: bold;
+        line-height: 72px;
+        margin-top: 60px;
+        @include laptop{
+            margin-top: 20px;
+        }
+        @include tablets{
+            margin-top: 50px;
+        }
+        text-transform: uppercase;
+        &:hover{
+            span{
+                @include transition(.3s);
+                margin-left: 10px;
+            }
+        }
+    }
+    &__cards{
+        display: flex;
+        @include phones{
+            display: none;
+        }
+    }
+    &__card{
+        height: 95px;
+        width: 169px;
+        border: 10px solid #0f33ff;
+        margin-right: 40px;
+        position: relative;
+        &:nth-child(3){
+            margin-right: 0;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        &:hover{
+            span{
+                top: 85px;
+            }
+        }
+        span{
+            @include transition(.2s);
+            position: absolute;
+            left: 20px;
+            color: #fff;
+            font-weight: 800;
+            letter-spacing: 1px;
+            top: 78px;
+        }
+    }
+}
+
+.contacts{
+    height: 100vh;
+    min-width: 900px;
+    width: 100%;
+    @include headButtonStyles;
+    @include tablets{
+        min-width: 400px;
+        max-width: 900px;
+        padding-top: 0;
+        width: 105%;
+    }
+    @include phones{
+        min-width: 200px;
+        padding-top: 34px;
+    }
+    @include largeTablet{
+        max-width: 1000px;
+    }
+    &__head-button{
+        margin-bottom: 0;
+    }
+    &__content{
+        position: relative;
+        height: 100%;
+        background: url('../images/contacts/background.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-left: -14px;
+        @include tablets{
+            background-position-x: -520px;
+            background-position-y: -102px;
+            height: 100%;
+            margin-left: -35px;
+        }
+        @include largeTablet{
+            height: 100%;
+            margin-left: -50px;
+            background-position-y: -92px;
+        }
+    }
+    &__info{
+        text-align: center;
+        display: inline-block;
+        color: #fff;
+        padding: 45px 45px;
+        background-color: #0b0b0b;
+        line-height: 26px;
+        position: absolute;
+        right: 330px;
+        top: 300px;
+        box-shadow: 0 0 30px 0 rgba(0,0,0,0.75);
+        a{
+            color: #fff;
+        }
+        @include largeLaptop{
+            top: 250px;
+        }
+        @include laptop{
+            top: 100px;
+            right: 230px;
+        }
+        @include tablets{
+            top: 170px;
+            right: 150px;
+        }
+        @include largeTablet{
+            top: 390px;
+            right: 90px;
+        }
+        @include phones{
+            top: 100px;
+            right: 12%;
+        }
+        @media (width: 414px){
+            right: 16%;
+        }
+    }
+    &__btn{
+        color: #fff;
+        display: block;
+        padding: 13px 25px;
+        font-weight: 800;
+        font-size: 20px;
+        margin-top: 10px;
+        &:nth-child(3){
+            margin-bottom: 0;
+        }
+    }
+    &__btn-blue{
+        background-color: #0f33ff;
+    }
+    &__btn-pink{
+        background-color: #e94b89;
+    }
+}
+
+.hire-us{
+    width: 100%;
+    input[type = "checkbox"]{
+        display: none;
+    }
+    &__header{
+        color: #fff;
+        font-size: 30px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+        @include phones{
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+    }
+    &__form{
+        max-width: 708px;
+       
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 70px;
+        @include largeLaptop{
+            margin-top: 50px;
+        }
+        @include laptop{
+            margin-top: -20px;
+        }
+        @include phones{
+            overflow-x: hidden;
+            margin-top: 70px;
+        }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        @include phones{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    &__option{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+        @include laptop{
+            margin-bottom: 30px;
+        }
+        @include phones{
+            display: block;
+            width: 45%;
+            margin-right: 0;
+        }
+    }
+    &__options1{
+        label{
+            margin-right: 20px;
+            @include phones{
+                margin-right: 0;
+            }
+            &:nth-child(5){
+                margin-right: 0;
+            }
+        }
+    }
+    &__options2{
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 72%;
+        @include phones{
+            width: 45%;
+            margin-top: -41.5px;
+        }
+        @include laptop{
+            margin-bottom: 0;
+        }
+        label{
+            margin-right: 0px;
+            margin-bottom: 50px;
+            @include phones{
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            &:nth-child(4){
+                margin-right: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__label{
+        display: block;
+        border: 2px solid #fff;
+        color: #fff;
+        line-height: 72px;
+        font-size: 18px;
+        @include phones{
+            font-size: 14px;
+        }
+        letter-spacing: 1px;
+        max-width: 200px;
+        @include phones{
+            max-width: 150px;
+            margin-bottom: 20px;
+            margin-right: 0;
+        }
+        width: 100%;
+        font-weight: 800;
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+        span{
+            display: none;
+        }
+    }
+    &__label-active{
+        background-color: #0f33ff;
+        span{
+            display: inline-block;
+        }
+    }
+    &__input-text{
+        max-width: 320px;
+        width: 100%;
+        color: #fff;
+        font-size: 30px;
+        font-weight: 800;
+        border: none;
+        border-bottom: 2px solid #fff;
+        margin-right: 50px; 
+        background-color: #0c0c0c;
+        padding-bottom: 11px;
+        &:nth-child(2){
+            margin-right: 0;
+        }
+    }
+    &__button{
+        background-color: #0f33ff;
+        max-width: 400px;
+        width: 100%;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 800;
+        line-height: 72px;
+        cursor: pointer;
+    }
+
+    &__text-fields{
+        @include phones{
+            width: 100%;
+            display: flex;
+        }
+    }
+}

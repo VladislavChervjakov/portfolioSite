@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__body">
+                <div class="header__logo">
+                    <img src="images/header/logo.png" alt="logo">
+                </div>
+                <div class="burger">
+                    <span></span>
+                    <span class="short"></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+            <div class="header__menu menu">
+                <ul class="menu__list">
+                    <li class="menu__item">Home</li>
+                    <li class="menu__item">Works</li>
+                    <li class="menu__item">About</li>
+                    <li class="menu__item">Contact</li>
+                    <li class="menu__item">Hire us</li>
+                </ul>
+            </div>
+    </header>
+    <div class="content-slider">
+        <div class="container">
+            <div class="content-slider__body">
+                <div class="content-slider__navigation">
+                   <div class="content-slider__line"></div>
+                   <a href="#" class="content-slider__navigation-page content-slider__navigation-page-active">
+                       <span class="content-slider__navigation-page-name content-slider__navigation-page-name-active">Home</span>
+                       <span class="content-slider__navigation-page-number content-slider__navigation-page-number-active">01</span>
+                   </a>
+                   <a href="#" class="content-slider__navigation-page">
+                        <span class="content-slider__navigation-page-name">Works</span>
+                        <span class="content-slider__navigation-page-number">02</span>
+                    </a>
+                    <a href="#" class="content-slider__navigation-page">
+                        <span class="content-slider__navigation-page-name">About</span>
+                        <span class="content-slider__navigation-page-number">03</span>
+                    </a>
+                    <a href="#" class="content-slider__navigation-page">
+                        <span class="content-slider__navigation-page-name">Contact</span>
+                        <span class="content-slider__navigation-page-number">04</span>
+                    </a>
+                    <a href="#" class="content-slider__navigation-page">
+                        <span class="content-slider__navigation-page-name" style="width: 100px;">Hire us</span>
+                        <span class="content-slider__navigation-page-number">05</span>
+                    </a>
+                </div>
+                <div class="content-slider__slide content-slider__slide-active home">
+                    <div class="home__header">
+                        <div class="home__title"> Your next interactive experience <br>
+                            <a class="home__btn">
+                                hire us &rarr;
+                                <span class="background"></span>
+                            </a>
+                        
+                        </div>
+                        <div class="home__image">
+                            <img src="images/home/img.png" alt="space">
+                        </div>
+                    </div>
+                    <div class="home__row tabs">
+                        <a href="#">
+                            <div class="tabs__item">
+                                <h3 class="tabs__header">Metiew & Smith</h3>
+                                <p class="tabs__text">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit, sed</p>
+                            </div> 
+                        </a>
+                        <a href="#">
+                            <div class="tabs__item">
+                                <h3 class="tabs__header">Fantasy interactive</h3>
+                                <p class="tabs__text">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit, sed</p>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="tabs__item">
+                                <h3 class="tabs__header">Paul & shark</h3>
+                                <p class="tabs__text">Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit, sed</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="content-slider__slide works">
+                   <a class="head-button works__head-button">
+                       HIRE US
+                   </a>
+                   <div class="works__slider-header">
+                       <h3>Selected work</h3>
+                   </div>
+                   <div class="works__slider">
+                       <div class="works__slides">
+                            <div class="works__slide">
+                                <div class="works__slide-item works__slide-item-left">
+                                    <img class="works__image" src="images/works/slide3.jpg" alt="">
+                                    <div class="works__title">Victory</div>
+                                    <p class="works__description">
+                                        1/Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit, sed d
+                                    </p>
+                                </div>
+                                <div class="works__slide-item works__slide-item-center">
+                                    <img class="works__image works__image-big" src="images/works/slide1.jpg" alt="">
+
+                                    <div class="works__title">Metiew & Smith</div>
+                                    <p class="works__description">
+                                        2/Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit, sed d
+                                    </p>
+                                </div>
+                                <div class="works__slide-item works__slide-item-right">
+                                    <img class="works__image" src="images/works/slide2.jpg" alt="">
+                                    <div class="works__title">Alex nowak</div>
+                                    <p class="works__description">
+                                        3/Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit, sed d
+                                    </p>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="works__slider-left arrows">
+                           <span>&larr;</span>
+                       </div>
+                       <div class="works__slider-right arrows">
+                           <span>&rarr;</span>
+                       </div>
+                   </div>
+                </div>
+                <div class="content-slider__slide about">
+                    <a class="head-button about__head-button">
+                        HIRE US
+                    </a>
+                    <div class="about__content">
+                        <div class="about__header">
+                            <div class="about__head-text">
+                                We <br> believe in <br> passionate <br> people 
+                            </div>
+                            <img class="about__main-img sub-image" src="images/about/about-main.png" alt="main-image">
+                            <a class="about__link-career">Career <span>&rarr;</span></a>
+                        </div>
+                        <div class="about__cards">
+                            <div class="about__card">
+                                <img src="images/about/card1.jpg" alt="winners">
+                                <span>WINNERS</span>
+                            </div>
+                            <div class="about__card">
+                                <img src="images/about/card2.jpg" alt="philosophy">
+                                <span>PHILOSOPHY</span>
+                            </div>
+                            <div class="about__card">
+                                <img src="images/about/card3.jpg" alt="history">
+                                <span>HISTORY</span>
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+                <div class="content-slider__slide contacts">
+                    <a class="head-button contacts__head-button">
+                        HIRE US
+                    </a>
+                    <div class="contacts__content">
+                        <div class="contacts__info">
+                            <a href="#">Pawia 5,31-154 Kraków, Polanrd</a> <br>
+                            <a href="mailto:ouremail@gmail.com">ouremail@gmail.com</a> <br>
+                            <a href="tel:+48 12 628 75 60">+48 12 628 75 60</a> <br>
+                            <a class="contacts__btn contacts__btn-blue">
+                                Behance
+                            </a> <br>
+                            <a class="contacts__btn contacts__btn-pink">
+                                dribble
+                            </a> <br>
+                            <a class="contacts__btn contacts__btn-blue">
+                                Contact us
+                            </a>
+                        </div>
+                    </div>
+             
+                </div>
+                <div class="content-slider__slide hire-us">
+                        <form  class="hire-us__form" action="#">
+                            <div class="hire-us__header">You want us to do</div>
+                            <span class="hire-us__options1 hire-us__option">
+                                <label class="hire-us__label" for="appdesign"><span>&#10003;</span> App Design</label>
+                                <input type="checkbox" id="appdesign" name="" id="">
+                                <label class="hire-us__label" for="graphicdesign"><span>&#10003;</span>  Graphic Design</label>
+                                <input type="checkbox" id="graphicdesign">
+                                <label class="hire-us__label" for="motiondesign"><span>&#10003;</span>  Motion Design</label>
+                                <input type="checkbox" id="motiondesign"> <br>
+                                
+                            </span>
+                           <span class="hire-us__options2 hire-us__option">
+                                <label class="hire-us__label" for="uxdesign"><span>&#10003;</span> UX Design</label>
+                                <input type="checkbox" id="uxdesign">
+                                <label class="hire-us__label" for="webdesign"><span>&#10003;</span> App Design</label>
+                                <input type="checkbox" id="webdesign">
+                                <label class="hire-us__label" for="marketing"><span>&#10003;</span> Marketing</label>
+                                <input type="checkbox" id="marketing">
+                           </span>
+                           <!-- <span class="hire-us__options3 hire-us__option">
+                                
+                           </span> -->
+                            <span class="hire-us__text-fields hire-us__option">
+                                <input class="hire-us__input-text" type="text" name="name" placeholder="Name">
+                                <input class="hire-us__input-text" type="email" name="email" placeholder="Email">        
+                            </span>
+                            <input class="hire-us__button" type="button" value="SEND REQUEST">
+                        </form>
+                </div>
+            </div>
+        </div>   
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
